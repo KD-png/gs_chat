@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- JQuery -->
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <title>Chat App</title>
+</head>
+<main>
+  <div>
+    メールアドレス<input id="mailAddress" type="mailAddress" required/>
+  </div>
+  <div>
+    パスワード<input id="password" type="password" required/>
+  </div>
+    <button id="login">ログイン</button>
+    <button id="register">新規登録</button>
+</main>
+<body>
+    <div>
+    <!-- 保存されたデータが表示される箇所 -->
+      <div type="chat-area" id="output"></div>
+    </div>
+    <div>
+        <input type="text" id="username" placeholder="Your Name">
+    </div>
+    <div>
+        <textarea name="" id="text"  placeholder="Textarea"></textarea>
+    </div>
+    <div>
+        <!-- 送信ボタン -->
+        <button id="send">Send</button>
+    </div>
+    
+  </div>
+    
+<!--** 以下Firebase **-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase.js"></script>
+  <!-- fierbase googlelogin -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "",
+      authDomain: "kadaichat-ec835.firebaseapp.com",
+      databaseURL: "https://kadaichat-ec835-default-rtdb.firebaseio.com",
+      projectId: "kadaichat-ec835",
+      storageBucket: "kadaichat-ec835.appspot.com",
+      messagingSenderId: "926545848126",
+      appId: "1:926545848126:web:2622d8d102b48640cb6e6f"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // firebaseのデータ保存
+    const newPostRef = firebase.database().ref();
+  </script>       
+  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
